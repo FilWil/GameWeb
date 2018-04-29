@@ -1,0 +1,36 @@
+﻿@model GameIndex
+
+<div id="Games">
+    <h3>Games Catalog</h3>
+    <div id="gameTable">
+        <table class="table table-condensed" id="catalogTable">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Platform</th>
+                <th>ReleaseYear</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var game in Model.Games)
+             {
+                <tr class="gameRow">
+                    <td class="">
+                        <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@game.Id">
+                            <img src="@game.ImageUrl" class="imageCell" />
+                        </a>      
+                    </td>
+                    <td class="">@game.Title</td>
+                    <td class="">@game.Genre</td>
+                    <td class="">@game.Platform</td>
+                    <td class="">@game.ReleaseYear</td>
+                    <td class="">@game.Rating</td>
+                </tr>
+             }
+            </tbody>
+        </table>
+    </div>
+</div>

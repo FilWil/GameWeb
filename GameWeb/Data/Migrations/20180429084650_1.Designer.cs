@@ -11,9 +11,10 @@ using System;
 namespace GameWeb.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180429084650_1")]
+    partial class _1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,22 +72,6 @@ namespace GameWeb.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("GameWeb.Models.GalleryScreenshot", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("Created");
-
-                    b.Property<string>("Title");
-
-                    b.Property<string>("Url");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GalleryScreenshots");
-                });
-
             modelBuilder.Entity("GameWeb.Models.Game", b =>
                 {
                     b.Property<int>("Id")
@@ -109,22 +94,6 @@ namespace GameWeb.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Games");
-                });
-
-            modelBuilder.Entity("GameWeb.Models.ScreenshotTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<int?>("GalleryScreenshotId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GalleryScreenshotId");
-
-                    b.ToTable("ScreenshotsTags");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -233,13 +202,6 @@ namespace GameWeb.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("GameWeb.Models.ScreenshotTag", b =>
-                {
-                    b.HasOne("GameWeb.Models.GalleryScreenshot")
-                        .WithMany("Tags")
-                        .HasForeignKey("GalleryScreenshotId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

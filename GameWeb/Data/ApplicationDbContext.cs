@@ -15,6 +15,10 @@ namespace GameWeb.Data
         {
         }
 
+        public virtual DbSet<Game> Games { get; set; }
+        public DbSet<GalleryScreenshot> GalleryScreenshots { get; set; }
+        public DbSet<ScreenshotTag> ScreenshotsTags { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("background.png");
 }
 
 /* Wrapping element */
@@ -32,4 +33,19 @@
     .carousel-caption {
         display: none;
     }
+}
+
+.imageCell {
+    width: 128px;
+    height: 170px;
+    padding: 10px;
+}
+
+img.detailImage {
+    width: 200px;
+    padding-bottom: 6px;
+}
+
+#itemTitle {
+    font-size: 1.3em;
 }
