@@ -1,0 +1,11 @@
+﻿@model ScreenshotIndex
+<div class="container body-content">
+    <div class="row gallery-content">
+        @foreach (var screenshot in Model.Screenshots)
+         {
+             <div class="gallery-screenshot-container">
+                 <div class="gallery-screenshot" style="background-image: url(@screenshot.Url)"></div>
+             </div>
+         }
+    </div>
+</div>
