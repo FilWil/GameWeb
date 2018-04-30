@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using GameWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,6 +24,22 @@ namespace GameWeb.Controllers
                 Screenshots = screenshotList,
                 SearchQuery = String.Empty
             };
+            return View(model);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var screenshot = _galleryService.GetById(id);
+
+            var model = new GalleryDetailModel
+            {
+                Id = screenshot.Id,
+                Title = screenshot.Title,
+                Created = screenshot.Created,
+                Url = screenshot.Url,
+                Tags = screenshot.Tags.Select(t => t.Description).ToList()
+            };
+
             return View(model);
         }
     }

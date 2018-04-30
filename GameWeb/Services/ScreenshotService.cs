@@ -25,7 +25,7 @@ namespace GameWeb.Services
 
         public GalleryScreenshot GetById(int id)
         {
-            return _context.GalleryScreenshots.Find(id);
+            return GetAll().Where(screenshot => screenshot.Id == id).First();
         }
 
         public IEnumerable<GalleryScreenshot> GetByTagName(string tag)

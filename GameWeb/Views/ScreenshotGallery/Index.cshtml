@@ -4,7 +4,9 @@
         @foreach (var screenshot in Model.Screenshots)
          {
              <div class="gallery-screenshot-container" style="display: inline-block;">
-                 <div class="gallery-screenshot" style="background-image: url(@screenshot.Url)"></div>
+                 <a asp-controller="ScreenshotGallery" asp-action="Detail" asp-route-id="@screenshot.Id">
+                     <div class="gallery-screenshot" style="background-image: url(@screenshot.Url)"></div>
+                 </a>
              </div>
          }
     </div>
