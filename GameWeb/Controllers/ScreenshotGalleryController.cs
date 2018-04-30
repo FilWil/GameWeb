@@ -9,58 +9,17 @@ namespace GameWeb.Controllers
 {
     public class ScreenshotGalleryController : Controller
     {
+        private readonly IScreenshot _galleryService;
+
+        //Dependency injection of IScreenshot interface through constructor
+        public ScreenshotGalleryController(IScreenshot galleryService)
+        {
+            _galleryService = galleryService;
+        }
+
         public IActionResult Index()
         {
-            var godOfWarFightTags = new List<ScreenshotTag>();
-            var godOfWarExplorationTags = new List<ScreenshotTag>();
-
-            var tag1 = new ScreenshotTag
-            {
-                Description = "Fight",
-                Id = 0
-            };
-
-            var tag2 = new ScreenshotTag
-            {
-                Description = "Tough",
-                Id = 1
-            };
-
-            var tag3 = new ScreenshotTag
-            {
-                Description = "Landscape",
-                Id = 2
-            };
-
-            godOfWarFightTags.AddRange(new List<ScreenshotTag>{tag1, tag2});
-            godOfWarExplorationTags.Add(tag3);
-
-            var screenshotList = new List<GalleryScreenshot>
-            {
-                new GalleryScreenshot()
-                {
-                    Title = "God of War Fight",
-                    Url = "https://artfiles.alphacoders.com/112/112217.jpg",
-                    Created = DateTime.Now,
-                    Tags = godOfWarFightTags
-                },
-
-                new GalleryScreenshot()
-                {
-                    Title = "God of War Landscape",
-                    Url = "https://cdn.gamer-network.net/2018/usgamer/god-of-war-atreus-kratos-landscape.jpg",
-                    Created = DateTime.Now,
-                    Tags = godOfWarExplorationTags
-                },
-
-                new GalleryScreenshot()
-                {
-                    Title = "God of War Exploration",
-                    Url = "http://cdn.escapistmagazine.com/media/global/images/library/deriv/1309/1309079.jpg",
-                    Created = DateTime.Now,
-                    Tags = godOfWarExplorationTags
-                }
-            };
+            var screenshotList = _galleryService.GetAll();
 
             var model = new ScreenshotIndex
             {

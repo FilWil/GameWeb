@@ -55,6 +55,7 @@ namespace GameWeb
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddScoped<IGames, GameService>();
+            services.AddScoped<IScreenshot, ScreenshotService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
