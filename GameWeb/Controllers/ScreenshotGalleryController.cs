@@ -15,9 +15,22 @@ namespace GameWeb.Controllers
             _galleryService = galleryService;
         }
 
-        public IActionResult Index()
+        //Following Action is displaying gallery of all screenshots ---> TO DO: implement this to button (Show Gallery or something)
+        //public IActionResult Index()
+        //{
+        //    var screenshotList = _galleryService.GetAll();
+
+        //    var model = new ScreenshotIndex
+        //    {
+        //        Screenshots = screenshotList,
+        //        SearchQuery = String.Empty
+        //    };
+        //    return View(model);
+        //}
+
+        public IActionResult Index(int id)
         {
-            var screenshotList = _galleryService.GetAll();
+            var screenshotList = _galleryService.GetAllByGameId(id);
 
             var model = new ScreenshotIndex
             {

@@ -12,5 +12,6 @@ namespace GameWeb.Models
         public DateTime Created { get; set; }
         public string Url { get; set; } //for Microsoft Azure
         public virtual IEnumerable<ScreenshotTag> Tags { get; set; }
+        public int GameId { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace GameWeb
     public interface IScreenshot
     {
         IEnumerable<GalleryScreenshot> GetAll();
+        IEnumerable<GalleryScreenshot> GetAllByGameId(int gameId);
         IEnumerable<GalleryScreenshot> GetByTagName(string tag);
         GalleryScreenshot GetById(int id);
         CloudBlobContainer GetBlobContainer(string connectionString, string containerName);

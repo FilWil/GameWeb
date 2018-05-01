@@ -26,9 +26,14 @@ namespace GameWeb.Services
                 .Include(screenshot => screenshot.Tags);
         }
 
+        public IEnumerable<GalleryScreenshot> GetAllByGameId(int gameId)
+        {
+            return GetAll().Where(screenshot => screenshot.GameId == gameId);
+        }
+
         public GalleryScreenshot GetById(int id)
         {
-            return GetAll().Where(screenshot => screenshot.Id == id).First();
+            return GetAll().First(screenshot => screenshot.Id == id);
         }
 
         public IEnumerable<GalleryScreenshot> GetByTagName(string tag)

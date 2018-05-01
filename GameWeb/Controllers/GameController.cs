@@ -7,31 +7,28 @@ using Microsoft.Extensions.Configuration;
 
 namespace GameWeb.Controllers
 {
-    public class ScreenshotController : Controller
+    public class GameController : Controller
     {
         private readonly IConfiguration _config;
-        private readonly IScreenshot _screenshotService;
-
-        public ScreenshotController(IConfiguration config, IScreenshot screenshotService)
+        private readonly IGames _gamesService;
+        private string AzureConnectionString { get; }
+        public GameController(IConfiguration config, IGames gamesService)
         {
             _config = config;
-            _screenshotService = screenshotService;
+            _gamesService = gamesService;
             AzureConnectionString = _config["AzureStorageConnectionString"];
         }
 
-        private string AzureConnectionString { get; }
-
-        public IActionResult Upload()
+        public IActionResult AddGame()
         {
-            var model = new UploadScreenshotModel();
-
+            var model = new AddGame();
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadNewScreenshot(IFormFile file, string tags, string title)
+        public async Task<IActionResult> AddNewGame(IFormFile file, string title, string genre, string platform, int releaseYear)
         {
-            var container = _screenshotService.GetBlobContainer(AzureConnectionString, "screenshots");
+            var container = _gamesService.GetBlobContainer(AzureConnectionString, "games");
 
             var content =
                 ContentDispositionHeaderValue.Parse(file
@@ -43,9 +40,9 @@ namespace GameWeb.Controllers
 
             await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
 
-            await _screenshotService.SetScreenshot(title, tags, blockBlob.Uri);
+            await _gamesService.SetGame(title, genre, platform, releaseYear, blockBlob.Uri);
 
-            return RedirectToAction("Index", "ScreenshotGallery");
+            return RedirectToAction("Index", "Catalog");
         }
     }
 }

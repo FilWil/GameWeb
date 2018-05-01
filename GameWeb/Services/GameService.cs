@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using GameWeb;
 using GameWeb.Data;
 using GameWeb.Models;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace GameWeb.Services
 {
@@ -77,6 +80,29 @@ namespace GameWeb.Services
                 return _context.Games.FirstOrDefault(game => game.Id == id).Rating;
             }
             else return -1;
+        }
+
+        public CloudBlobContainer GetBlobContainer(string connectionString, string containerName)
+        {
+            var storageAccount = CloudStorageAccount.Parse(connectionString);
+            var blobClient = storageAccount.CreateCloudBlobClient();
+
+            return blobClient.GetContainerReference(containerName);
+        }
+
+        public async Task SetGame(string title, string genre, string platform, int releaseYear, Uri uri)
+        {
+            var game = new Game
+            {
+                Title = title,
+                Genre = genre,
+                Platform = platform,
+                ReleaseYear = releaseYear,
+                ImageUrl = uri.AbsoluteUri
+            };
+
+            _context.Add(game);
+            await _context.SaveChangesAsync();
         }
     }
 }
