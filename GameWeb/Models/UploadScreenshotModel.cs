@@ -10,6 +10,7 @@ namespace GameWeb.Models
     {
         public string Title { get; set; }
         public string Tags { get; set; }
+        public int GameId { get; set; }
         public IFormFile ScreenshotUpload { get; set; }
     }
 }

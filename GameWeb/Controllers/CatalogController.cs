@@ -53,12 +53,11 @@ namespace GameWeb.Controllers
             return View(model);
         }
 
-        public IActionResult RedirectGameId(int id)
+        public IActionResult RedirectGameIdToGallery(int id)
         {
             return RedirectToAction("Index", "ScreenshotGallery", new {
                 id
             });
         }
-
     }
 }

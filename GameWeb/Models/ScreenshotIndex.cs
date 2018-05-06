@@ -9,5 +9,6 @@ namespace GameWeb.Models
     {
         public IEnumerable<GalleryScreenshot> Screenshots { get; set; }
         public string SearchQuery { get; set; }
+        public int GameId { get; set; }
     }
 }

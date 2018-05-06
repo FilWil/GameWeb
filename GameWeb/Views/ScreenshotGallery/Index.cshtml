@@ -1,13 +1,14 @@
 ﻿@model ScreenshotIndex
 <div class="container body-content">
+    <a class="btn btn-lg btn-info" role="button" asp-controller="ScreenshotGallery" asp-action="RedirectGameId" asp-route-id="@Model.GameId">Upload Photo</a>
     <div class="row gallery-content">
         @foreach (var screenshot in Model.Screenshots)
-         {
-             <div class="gallery-screenshot-container drop-shadow" style="display: inline-block;">
-                 <a asp-controller="ScreenshotGallery" asp-action="Detail" asp-route-id="@screenshot.Id">
-                     <div class="gallery-screenshot" style="background-image: url(@screenshot.Url)"></div>
-                 </a>
-             </div>
-         }
+        {
+            <div class="gallery-screenshot-container drop-shadow" style="display: inline-block;">
+                <a asp-controller="ScreenshotGallery" asp-action="Detail" asp-route-id="@screenshot.Id">
+                    <div class="gallery-screenshot" style="background-image: url(@screenshot.Url)"></div>
+                </a>
+            </div>
+        }
     </div>
 </div>

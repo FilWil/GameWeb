@@ -14,7 +14,7 @@ namespace GameWeb
         IEnumerable<GalleryScreenshot> GetByTagName(string tag);
         GalleryScreenshot GetById(int id);
         CloudBlobContainer GetBlobContainer(string connectionString, string containerName);
-        Task SetScreenshot(string title, string tags, Uri uri);
+        Task SetScreenshot(string title, int gameId, string tags, Uri uri);
         List<ScreenshotTag> ParseTags(string tags);
 
     }

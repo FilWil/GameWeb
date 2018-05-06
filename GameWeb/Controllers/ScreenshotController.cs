@@ -21,15 +21,18 @@ namespace GameWeb.Controllers
 
         private string AzureConnectionString { get; }
 
-        public IActionResult Upload()
+        public IActionResult Upload(int id)
         {
-            var model = new UploadScreenshotModel();
+            var model = new UploadScreenshotModel
+            {
+                GameId = id
+            };
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadNewScreenshot(IFormFile file, string tags, string title)
+        public async Task<IActionResult> UploadNewScreenshot(IFormFile file, string tags, string title, int gameId)
         {
             var container = _screenshotService.GetBlobContainer(AzureConnectionString, "screenshots");
 
@@ -43,9 +46,9 @@ namespace GameWeb.Controllers
 
             await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
 
-            await _screenshotService.SetScreenshot(title, tags, blockBlob.Uri);
+            await _screenshotService.SetScreenshot(title, gameId, tags, blockBlob.Uri);
 
-            return RedirectToAction("Index", "ScreenshotGallery");
+            return RedirectToAction("Index", "ScreenshotGallery", new {id = gameId});
         }
     }
 }

@@ -49,12 +49,13 @@ namespace GameWeb.Services
             return blobClient.GetContainerReference(containerName);
         }
 
-        public async Task SetScreenshot(string title, string tags, Uri uri)
+        public async Task SetScreenshot(string title, int gameId, string tags, Uri uri)
         {
             var screenshot = new GalleryScreenshot
             {
                 Title = title,
                 Tags = ParseTags(tags),
+                GameId = gameId,
                 Url = uri.AbsoluteUri,
                 Created = DateTime.Now
             };

@@ -35,6 +35,7 @@ namespace GameWeb.Controllers
             var model = new ScreenshotIndex
             {
                 Screenshots = screenshotList,
+                GameId = id,
                 SearchQuery = String.Empty
             };
             return View(model);
@@ -54,6 +55,14 @@ namespace GameWeb.Controllers
             };
 
             return View(model);
+        }
+
+        public IActionResult RedirectGameId(int id)
+        {
+            return RedirectToAction("Upload", "Screenshot", new
+            {
+                id
+            });
         }
     }
 }
