@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using GameWeb.Interfaces;
 using GameWeb.Models;
+using GameWeb.Models.Gallery;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameWeb.Controllers

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using GameWeb.Models;
+using GameWeb.Models.Game;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace GameWeb
+namespace GameWeb.Interfaces
 {
     public interface IGames
     {

@@ -1,17 +1,13 @@
-﻿@model GalleryDetailModel
-<div class="container body-content">
+﻿@using GameWeb.Models.Gallery
+@model GameWeb.Models.Gallery.GalleryDetailModel
+<div class="container body-content" id="screenshot-body-content">
     <div class="row screenshot-detail-container">
         <div class="screenshot-detail">
             <img src="@Model.Url" alt="@Model.Title"/>
         </div>
     </div>
     <div class="row screenshot-detail-meta">
-        <span>Title: @Model.Title</span>
+        <span>Title: @Model.Title</span><br/>
         <span>Posted: @Model.Created</span>
-    </div>
-    <div class="row controls">
-        <a class="btn btn-primary" asp-controller="ScreenshotGallery" asp-action="Index">
-            Back to Screenshot Gallery
-        </a>
     </div>
 </div>

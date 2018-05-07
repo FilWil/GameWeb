@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using GameWeb;
 using GameWeb.Data;
+using GameWeb.Interfaces;
 using GameWeb.Models;
+using GameWeb.Models.Game;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 

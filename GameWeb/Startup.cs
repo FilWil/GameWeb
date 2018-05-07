@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using GameWeb.Data;
+using GameWeb.Interfaces;
 using GameWeb.Models;
 using GameWeb.Services;
 

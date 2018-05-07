@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using GameWeb.Interfaces;
 using GameWeb.Models;
+using GameWeb.Models.Game;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameWeb.Controllers

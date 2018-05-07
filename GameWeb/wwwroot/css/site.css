@@ -1,22 +1,17 @@
-﻿
-body {
+﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url("background.png");
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* QR code generator */
 #qrCode {
     margin: 15px;
 }
-
 
 .imageCell {
     width: 128px;
@@ -48,45 +43,55 @@ body {
 .gallery-screenshot-container {
     padding: 8px;
     background-color: white;
-    border-radius: 2px; 
+    border-radius: 2px;
     height: 300px;
     width: 300px;
     margin: 12px;
-    position: relative; 
+    position: relative;
 }
 
 .drop-shadow {
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.screenshot-detail-container{
+.screenshot-detail-container {
     text-align: left;
+    margin-top: 20px;
+    padding: 5px;
+}
+.screenshot-detail-container img {
+    max-width: 1000px;
+    display: block;
+    margin: auto;
 }
 
-.screenshot-detail{
+.screenshot-detail {
     padding: 12px;
-    border-radius: 2px;
 }
 
-.screenshot-detail-meta{
+.screenshot-detail-meta {
     padding: 12px;
 }
 
-.submit{
+#screenshot-body-content {
+    text-align: center;
+}
+
+.submit {
     padding: 2%;
 }
 
-.btn-file{
+.btn-file {
     margin: 6px;
 }
 
-#upload-form{
+#upload-form {
     padding: 60px;
     margin: auto;
     width: 50%;
 }
 
-.upload-container{
+.upload-container {
     padding: 2%;
 }
 

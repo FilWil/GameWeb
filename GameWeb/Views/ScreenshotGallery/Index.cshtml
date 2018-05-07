@@ -1,4 +1,5 @@
-﻿@model ScreenshotIndex
+﻿@using GameWeb.Models.Gallery
+@model GameWeb.Models.Gallery.ScreenshotIndex
 <div class="container body-content">
     <a class="btn btn-lg btn-info" role="button" asp-controller="ScreenshotGallery" asp-action="RedirectGameId" asp-route-id="@Model.GameId">Upload Photo</a>
     <div class="row gallery-content">
