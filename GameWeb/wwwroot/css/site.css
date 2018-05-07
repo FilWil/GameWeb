@@ -107,3 +107,18 @@
 #home-header {
     text-align: center;
 }
+
+.itemValue {
+    text-align: right;
+}
+
+.btn-upload-container {
+    text-align: center;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 24px;
+}
+
+.screenshot-detail-meta {
+    font-size: 20px;
+}

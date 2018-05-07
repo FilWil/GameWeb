@@ -11,23 +11,22 @@
 
         <div class="col-md-4">
             <div>
-                <p id="itemTitle">@Model.Title (@Model.ReleaseYear)</p>
                 <img class="detailImage" src="@Model.ImageUrl" />
                 <table>
                     <tr>
-                        <td class="itemLabel">Genre: </td>
+                        <td class="itemLabel"><b>Genre: </b></td>
                         <td class="itemValue">@Model.Genre</td>
                     </tr>
                     <tr>
-                        <td class="itemLabel">Platform: </td>
+                        <td class="itemLabel"><b>Platform:</b> </td>
                         <td class="itemValue">@Model.Platform</td>
                     </tr>
                     <tr>
-                        <td class="itemLabel">Release: </td>
+                        <td class="itemLabel"><b>Release</b>: </td>
                         <td class="itemValue">@Model.ReleaseYear</td>
                     </tr>
                     <tr>
-                        <td class="itemLabel">Rating: </td>
+                        <td class="itemLabel"><b>Rating:</b> </td>
                         <td class="itemValue">@Model.Rating</td>
                     </tr>
                 </table>
@@ -37,14 +36,16 @@
 
         <div class="col-md-4">
             <div>
-                <p id="itemDescription" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi nibh, dapibus facilisis finibus vel, venenatis vel ligula. Maecenas faucibus interdum diam, a molestie metus sollicitudin at. Suspendisse porta gravida diam, a gravida mi molestie eget. Nunc eleifend magna eu nulla imperdiet hendrerit. Sed fermentum pretium lectus ut bibendum. Curabitur est libero, mattis at tellus a, imperdiet maximus risus. Nulla lacinia lobortis lorem, ac interdum diam pellentesque eu. Proin facilisis pharetra lacus, vitae volutpat erat congue ac. Etiam imperdiet, velit eu porttitor dictum, risus nibh auctor nibh, id pharetra quam neque et mauris. Quisque sed laoreet lorem. Ut pulvinar eget magna nec pellentesque. Maecenas et magna a quam consequat ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId">Watch Trailer</a></p>
+                <p id="itemTitle">@Model.Title (@Model.ReleaseYear)</p>
+                <p id="itemDescription" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi nibh, dapibus facilisis finibus vel, venenatis vel ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div>
                     <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="RedirectGameIdToGallery" asp-route-id="@Model.GameId">ShowGallery</a></p>
+                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId">Watch Trailer</a></p>
                 </div>
             </div>
         </div>

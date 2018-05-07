@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row screenshot-detail-meta">
-        <span>Title: @Model.Title</span><br/>
-        <span>Posted: @Model.Created</span>
+        <span><b>Title: </b>@Model.Title</span><br/>
+        <span><b>Posted: </b>@Model.Created.ToLocalTime()</span>
     </div>
 </div>
