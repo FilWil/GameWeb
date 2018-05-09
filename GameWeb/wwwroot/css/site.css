@@ -122,3 +122,97 @@
 .screenshot-detail-meta {
     font-size: 20px;
 }
+
+.api-table {
+    border-collapse: separate;
+    border-spacing: 0.1em 1em;
+}
+
+.api-get-cell {
+    background-color: #0B8FA1;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 1px #0A7E90;
+}
+
+.api-get-cell-link {
+    background-color: #50B1BE;
+    width: 40em;
+    border: solid 1px #2C9BAA;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.api-put-cell {
+    background-color: #D28A00;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 1px #C17900;
+}
+
+.api-put-cell-link {
+    background-color: #FFCB69;
+    width: 40em;
+    border: solid 1px #FFBD3F;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.api-post-cell {
+    background-color: #009B2F;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.api-post-cell-link {
+    background-color: #57D478;
+    width: 40em;
+    border: solid 1px #31C859;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.api-post-cell {
+    background-color: #009B2F;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 1px #008A1E;
+}
+
+.api-post-cell-link {
+    background-color: #57D478;
+    width: 40em;
+    border: solid 1px #31C859;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.api-delete-cell {
+    background-color: #C8001C;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 1px #B7000B;
+}
+
+.api-delete-cell-link {
+    background-color: #F7667A;
+    width: 40em;
+    border: solid 1px #F43C55;
+    border-radius: 8px;
+    text-align: center;
+}

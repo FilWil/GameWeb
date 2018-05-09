@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameWeb", "GameWeb\GameWeb.csproj", "{BE2E4539-6A9D-4F03-A716-92D01ED01817}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameWeb.UnitTests", "GameWeb.UnitTests\GameWeb.UnitTests.csproj", "{5A85510B-432B-4BD5-8D55-98668C8AAFA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameWeb.UnitTests", "GameWeb.UnitTests\GameWeb.UnitTests.csproj", "{5A85510B-432B-4BD5-8D55-98668C8AAFA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
