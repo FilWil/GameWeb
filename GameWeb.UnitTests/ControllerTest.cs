@@ -18,7 +18,7 @@ namespace GameWeb.UnitTests
             var controller = new HomeController();
 
             //Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = controller.Index() as ViewResult;
 
             //Assert
             Assert.IsNotNull(result);
