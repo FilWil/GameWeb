@@ -4,7 +4,7 @@
 <div class="container body-content">
     <div class="row upload-container">
         <div class="upload-form drop-shadow">
-            <form asp-action="UploadNewScreenshot" method="post" enctype="multipart/form-data" id="upload-form">
+            <form asp-action="UploadNewScreenshot" method="post" enctype="multipart/form-data" id="upload-form" style="color: white;">
                 <input asp-for="GameId" type="hidden"  value="@Model.GameId" />
                 <div class="form-group">
                     <label asp-for="Title"></label>
@@ -20,7 +20,6 @@
                         <input type="file" name="file" style="display: none;" />
                     </label>
                 </div>
-                <div>@Model.GameId</div>
                 <div class="submit">
                     <button type="submit" id="btn-upload" class="btn btn-info">Submit</button>
                 </div>
