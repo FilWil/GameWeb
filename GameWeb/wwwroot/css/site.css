@@ -129,8 +129,11 @@
     margin-right: 12px;
 }
 
-#home-header {
+.home-header {
     text-align: center;
+    color: white;
+    font-family: 'Noto Serif', serif;
+    font-size: 6em;
 }
 
 .itemValue {
@@ -300,3 +303,4 @@
 .nav-pills > li > a:hover {
     color: black;
 }
+
