@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="page-header clearfix detailHeading">
-        <h2 class="text-muted" style="color: white">Description</h2>
+        <h2 class="text-muted" style="color: white; font-family: 'Roboto', sans-serif;">Description</h2>
     </div>
 
 
@@ -37,15 +37,15 @@
         <div class="col-md-4">
             <div>
                 <p id="itemTitle">@Model.Title (@Model.ReleaseYear)</p>
-                <p id="itemDescription" style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi nibh, dapibus facilisis finibus vel, venenatis vel ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p id="itemDescription" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi nibh, dapibus facilisis finibus vel, venenatis vel ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div>
-                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="RedirectGameIdToGallery" asp-route-id="@Model.GameId">ShowGallery</a></p>
-                    <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId">Watch Trailer</a></p>
+                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="RedirectGameIdToGallery" asp-route-id="@Model.GameId">Show Gallery</a></p>
+                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId">Watch Trailer</a></p>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿@using GameWeb.Models.Gallery
 @model GameWeb.Models.Gallery.UploadScreenshotModel
 
-<div class="container body-content">
+<div class="container body-content" style="font-family: 'Roboto', sans-serif;">
     <div class="row upload-container">
         <div class="upload-form drop-shadow">
             <form asp-action="UploadNewScreenshot" method="post" enctype="multipart/form-data" id="upload-form" style="color: white;">
@@ -21,7 +21,7 @@
                     </label>
                 </div>
                 <div class="submit">
-                    <button type="submit" id="btn-upload" class="btn btn-info">Submit</button>
+                    <button type="submit" id="btn-upload" class="btn btn-danger">Submit</button>
                 </div>
             </form>
         </div>

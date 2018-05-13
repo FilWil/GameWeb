@@ -9,8 +9,8 @@
     ViewData["Title"] = "Log in";
 }
 
-<h2>@ViewData["Title"]</h2>
-<div class="row">
+<h2 style="color: white">@ViewData["Title"]</h2>
+<div class="row" style="color: white">
     <div class="col-md-4">
         <section>
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
@@ -38,12 +38,12 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-default">Log in</button>
                 </div>
-                <div class="form-group">
+                <div class="form-group" >
                     <p>
-                        <a asp-action="ForgotPassword">Forgot your password?</a>
+                        <a asp-action="ForgotPassword" class="login-link">Forgot your password?</a>
                     </p>
                     <p>
-                        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" class="login-link">Register as a new user?</a>
                     </p>
                 </div>
             </form>
