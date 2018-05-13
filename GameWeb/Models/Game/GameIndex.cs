@@ -4,6 +4,6 @@ namespace GameWeb.Models.Game
 {
     public class GameIndex
     {
-        public IEnumerable<Models.Game.Game> Games { get; set; }
+        public IEnumerable<Game> Games { get; set; }
     }
 }

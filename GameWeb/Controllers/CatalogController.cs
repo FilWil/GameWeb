@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using GameWeb.Interfaces;
 using GameWeb.Models;
 using GameWeb.Models.Game;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using SQLitePCL;
 
 namespace GameWeb.Controllers
 {
@@ -111,6 +113,40 @@ namespace GameWeb.Controllers
             return RedirectToAction("Index", "ScreenshotGallery", new {
                 id
             });
+        }
+
+        public IActionResult SearchGames(string searchPattern)
+        {
+            //Matching all letters to lowercase (the same thing is happening to game title during comparison)
+            searchPattern = searchPattern.ToLower();
+
+            var games = _games.GetAll();
+
+            if (!String.IsNullOrEmpty(searchPattern))
+            {
+                games = games.Where(game => game.Title.ToLower().Contains(searchPattern));
+            }
+
+            var listingResults = games
+                .Select(result => new Game
+                {
+                    Id = result.Id,
+                    ImageUrl = result.ImageUrl,
+                    Title = result.Title,
+                    Genre = result.Genre,
+                    ReleaseYear = result.ReleaseYear,
+                    Rating = result.Rating,
+                    Platform = result.Platform
+
+                });
+
+            var modelGames = listingResults.ToList();
+            var model = new GameIndex()
+            {
+                Games = modelGames
+            };
+
+            return View(model);
         }
     }
 }

@@ -1,16 +1,32 @@
-﻿@{
+﻿@using GameWeb.Models.Game
+@model GameWeb.Models.Game.SearchGame
+@{
     ViewData["Title"] = "Home Page";
 }
 <link href="~/css/introduction-animation.css" rel="stylesheet" />
-<header style="position: relative;">
-    <h1 class="home-header">GameWeb</h1>
-    <h2 class="introduction">It's about
-        <div class="introductionRotation">
-            <span>Play</span>
-            <span>Rate</span>
-            <span>Share</span>
-            <span>Games</span>
-        </div>
-    </h2>
-</header>
+<div class="container">
+    <header style="position: relative;">
+        <h1 class="home-header">GameWeb</h1>
+        <h2 class="introduction">
+            It's about
+            <div class="introductionRotation">
+                <span>playing</span>
+                <span>rating</span>
+                <span>sharing</span>
+                <span>games</span>
+            </div>
+        </h2>
+    </header>
 
+        <div class="search-bar-container">
+            <form asp-action="SearchGames" asp-controller="Catalog" method="post" enctype="multipart/form-data">
+                <input asp-for="SearchPattern" type="text" placeholder="Search by title" class="search-bar col-md-10" />
+                
+
+                    <button class="search-bar-btn col-md-2" >
+                        <img src="~/images/baseline_search_white_48dp.png" alt="Searchbar"/>
+                    </button>
+            </form>
+            
+        </div>
+</div>
