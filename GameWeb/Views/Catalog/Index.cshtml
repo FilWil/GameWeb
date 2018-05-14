@@ -1,6 +1,7 @@
-﻿@using GameWeb.Models.Game
-@model GameWeb.Models.Game.GameIndex
-
+﻿@model GameWeb.Models.Game.GameIndex
+@{
+    ViewData["Title"] = "Games catalog";
+}
 <div id="Games">
     <h3 style="color: white; font-family: 'Roboto', sans-serif;">Games Catalog</h3>
     <div class="jumbotron" id="gameTable" style="font-family: 'Roboto', sans-serif;">
@@ -9,28 +10,28 @@
             <tr>
                 <th></th>
                 <th>@Html.ActionLink("Title", "Index", new {sortOption = "Title"})</th>
-                <th>@Html.ActionLink("Genre", "Index", new { sortOption = "Genre" })</th>
-                <th>@Html.ActionLink("Platform", "Index", new { sortOption = "Platform" })</th>
-                <th>@Html.ActionLink("ReleaseYear", "Index", new { sortOption = "ReleaseYear" })</th>
-                <th>@Html.ActionLink("Rating", "Index", new { sortOption = "Rating" })</th>
+                <th>@Html.ActionLink("Genre", "Index", new {sortOption = "Genre"})</th>
+                <th>@Html.ActionLink("Platform", "Index", new {sortOption = "Platform"})</th>
+                <th>@Html.ActionLink("ReleaseYear", "Index", new {sortOption = "ReleaseYear"})</th>
+                @*<th>@Html.ActionLink("Rating", "Index", new { sortOption = "Rating" })</th>*@
             </tr>
             </thead>
-            <tbody>          
+            <tbody>
             @foreach (var game in Model.Games)
-             {
+            {
                 <tr class="catalog-row">
                     <td class="">
                         <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@game.Id">
                             <img src="@game.ImageUrl" class="imageCell" alt="Game cover"/>
-                        </a>      
+                        </a>
                     </td>
                     <td class="catalog-cell">@game.Title</td>
                     <td class="catalog-cell">@game.Genre</td>
                     <td class="catalog-cell">@game.Platform</td>
                     <td class="catalog-cell">@game.ReleaseYear</td>
-                    <td class="catalog-cell">@game.Rating</td>
+                    @*<td class="catalog-cell">@game.Rating</td>*@
                 </tr>
-             }
+            }
             </tbody>
         </table>
     </div>

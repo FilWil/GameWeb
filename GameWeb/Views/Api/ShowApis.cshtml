@@ -1,28 +1,42 @@
-﻿<h1 style="color: white; font-family: 'Roboto', sans-serif;">API</h1>
+﻿@{
+    ViewData["Title"] = "API";
+}
+
+<h1 style="color: white; font-family: 'Roboto', sans-serif;">API</h1>
 <div class="jumbotron container">
-    
+
     <table class="api-table">
         <tr>
             <th>Games</th>
         </tr>
         <tr class="api-get-row">
-            <td class="api-get-cell"><b>GET</b></td>
+            <td class="api-get-cell">
+                <b>GET</b>
+            </td>
             <td class="api-get-cell-link">api/Games</td>
         </tr>
-        <tr class="api-get-row"> 
-            <td class="api-get-cell"><b>GET</b></td>
+        <tr class="api-get-row">
+            <td class="api-get-cell">
+                <b>GET</b>
+            </td>
             <td class="api-get-cell-link">api/Games/{id}</td>
         </tr>
         <tr class="api-put-row">
-            <td class="api-put-cell"><b>PUT</b></td>
+            <td class="api-put-cell">
+                <b>PUT</b>
+            </td>
             <td class="api-put-cell-link">api/Games/{id}</td>
         </tr>
         <tr class="api-post-row">
-            <td class="api-post-cell"><b>POST</b></td>
+            <td class="api-post-cell">
+                <b>POST</b>
+            </td>
             <td class="api-post-cell-link">api/Games</td>
         </tr>
         <tr class="api-delete-row">
-            <td class="api-delete-cell"><b>DELETE</b></td>
+            <td class="api-delete-cell">
+                <b>DELETE</b>
+            </td>
             <td class="api-delete-cell-link">api/Games/{id}</td>
         </tr>
     </table>

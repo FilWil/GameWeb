@@ -1,18 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Game;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using SQLitePCL;
 
 namespace GameWeb.Controllers
 {
     public class CatalogController : Controller
     {
-        private IGames _games;
+        private readonly IGames _games;
+
         public CatalogController(IGames games)
         {
             _games = games;
@@ -58,11 +54,10 @@ namespace GameWeb.Controllers
                     ReleaseYear = result.ReleaseYear,
                     Rating = result.Rating,
                     Platform = result.Platform
-
                 });
 
             var modelGames = listingResults.ToList();
-            var model = new GameIndex()
+            var model = new GameIndex
             {
                 Games = modelGames
             };
@@ -110,7 +105,8 @@ namespace GameWeb.Controllers
 
         public IActionResult RedirectGameIdToGallery(int id)
         {
-            return RedirectToAction("Index", "ScreenshotGallery", new {
+            return RedirectToAction("Index", "ScreenshotGallery", new
+            {
                 id
             });
         }
@@ -122,10 +118,8 @@ namespace GameWeb.Controllers
 
             var games = _games.GetAll();
 
-            if (!String.IsNullOrEmpty(searchPattern))
-            {
+            if (!string.IsNullOrEmpty(searchPattern))
                 games = games.Where(game => game.Title.ToLower().Contains(searchPattern));
-            }
 
             var listingResults = games
                 .Select(result => new Game
@@ -137,11 +131,10 @@ namespace GameWeb.Controllers
                     ReleaseYear = result.ReleaseYear,
                     Rating = result.Rating,
                     Platform = result.Platform
-
                 });
 
             var modelGames = listingResults.ToList();
-            var model = new GameIndex()
+            var model = new GameIndex
             {
                 Games = modelGames
             };

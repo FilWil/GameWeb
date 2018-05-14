@@ -1,50 +1,50 @@
 ﻿body {
+    padding-bottom: 20px;
     padding-top: 50px;
-    padding-bottom: 20px;    
 }
 
 .body-content:before {
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
+    -webkit-filter: blur(2px);
     background-image: url("background.jpg");
     background-size: cover;
-    width: 100%;
-    height: 100%;
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    z-index: -1;
+    content: "";
     display: block;
+    filter: blur(2px);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 .body-content {
+    overflow: auto;
+    overflow: hidden;
     padding-left: 15px;
     padding-right: 15px;
-    overflow: auto;
     position: relative;
-    overflow: hidden;
 }
 
 #qrCode { margin: 15px; }
 
 .imageCell {
-    width: 128px;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2), 0 4px 4px rgba(255, 255, 255, 0.2);
     height: 170px;
     margin: 10px;
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2), 0 4px 4px rgba(255, 255, 255, 0.2);
+    width: 128px;
 }
 
 .detailImage {
-    width: 200px;
-    max-height: 285px;
-    margin-bottom: 6px;
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2), 0 4px 4px rgba(255, 255, 255, 0.2);
+    margin-bottom: 6px;
+    max-height: 285px;
+    width: 200px;
 }
 
 #itemTitle { font-size: 1.3em; }
@@ -52,35 +52,35 @@
 .gallery-content { padding: 24px; }
 
 .gallery-screenshot {
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 280px;
     width: 280px;
 }
 
 .gallery-screenshot-container {
-    padding: 8px;
     background-color: white;
     border-radius: 2px;
     height: 300px;
-    width: 300px;
     margin: 12px;
+    padding: 8px;
     position: relative;
+    width: 300px;
 }
 
 .drop-shadow { box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2); }
 
 .screenshot-detail-container {
-    text-align: left;
     margin-top: 20px;
     padding: 5px;
+    text-align: left;
 }
 
 .screenshot-detail-container img {
-    max-width: 1000px;
     display: block;
     margin: auto;
+    max-width: 1000px;
 }
 
 .screenshot-detail { padding: 12px; }
@@ -94,36 +94,36 @@
 .btn-file { margin: 6px; }
 
 #upload-form {
-    padding: 60px;
     margin: auto;
+    padding: 60px;
     width: 50%;
 }
 
 .upload-container { padding: 2%; }
 
 .nav-logo {
-    width: 35px;
-    height: 35px;
     float: left;
-    padding: 2px;
-    margin-top: 8px;
+    height: 35px;
     margin-right: 12px;
+    margin-top: 8px;
+    padding: 2px;
+    width: 35px;
 }
 
 .home-header {
-    text-align: center;
     color: white;
     font-family: 'Noto Serif', serif;
     font-size: 6em;
+    text-align: center;
 }
 
 .itemValue { text-align: right; }
 
 .btn-upload-container {
-    text-align: center;
     margin-left: auto;
     margin-top: 20px;
     padding: 24px;
+    text-align: center;
 }
 
 .screenshot-detail-meta { font-size: 20px; }
@@ -131,105 +131,105 @@
 .api-table {
     border-collapse: separate;
     border-spacing: 0.1em 1em;
-    margin: auto;
     font-family: 'Roboto', sans-serif;
+    margin: auto;
 }
 
 .api-get-cell {
     background-color: #0B8FA1;
-    width: 35px;
-    height: 35px;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
     border: solid 1px #0A7E90;
+    border-radius: 8px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    width: 35px;
 }
 
 .api-get-cell-link {
     background-color: #50B1BE;
-    width: 40em;
     border: solid 1px #2C9BAA;
     border-radius: 8px;
     text-align: center;
+    width: 40em;
 }
 
 .api-put-cell {
     background-color: #D28A00;
-    width: 35px;
-    height: 35px;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
     border: solid 1px #C17900;
+    border-radius: 8px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    width: 35px;
 }
 
 .api-put-cell-link {
     background-color: #FFCB69;
-    width: 40em;
     border: solid 1px #FFBD3F;
     border-radius: 8px;
     text-align: center;
+    width: 40em;
 }
 
 .api-post-cell {
     background-color: #009B2F;
-    width: 35px;
-    height: 35px;
-    color: white;
-    text-align: center;
     border-radius: 8px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    width: 35px;
 }
 
 .api-post-cell-link {
     background-color: #57D478;
-    width: 40em;
     border: solid 1px #31C859;
     border-radius: 8px;
     text-align: center;
+    width: 40em;
 }
 
 .api-post-cell {
     background-color: #009B2F;
-    width: 35px;
-    height: 35px;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
     border: solid 1px #008A1E;
+    border-radius: 8px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    width: 35px;
 }
 
 .api-post-cell-link {
     background-color: #57D478;
-    width: 40em;
     border: solid 1px #31C859;
     border-radius: 8px;
     text-align: center;
+    width: 40em;
 }
 
 .api-delete-cell {
     background-color: #C8001C;
-    width: 35px;
-    height: 35px;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
     border: solid 1px #B7000B;
+    border-radius: 8px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    width: 35px;
 }
 
 .api-delete-cell-link {
     background-color: #F7667A;
-    width: 40em;
     border: solid 1px #F43C55;
     border-radius: 8px;
     text-align: center;
+    width: 40em;
 }
 
 .catalog-cell { font-size: 1.5em; }
 
 .game-detail-container {
     border: 1px solid black;
-    font-size: 1.5em;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
 }
 
 .jumbotron {
@@ -277,30 +277,30 @@
 .nav-pills > li > a:hover { color: black; }
 
 .search-bar-container {
-    margin-top: 60px;
     background: #000000;
     background: rgba(0, 0, 0, 0.4);
-    position: relative;
+    margin-top: 60px;
     opacity: 1;
+    position: relative;
 }
 
 .search-bar {
-    height: 200px;
-    margin: auto;
     background: #000000;
     background: rgba(0, 0, 0, 0.4);
-    padding-right: 0;
     border: none;
-    outline: none;
     color: white;
-    font-size: 5em;
     font-family: 'Roboto', sans-serif;
+    font-size: 5em;
+    height: 200px;
+    margin: auto;
+    outline: none;
+    padding-right: 0;
 }
 
 .search-bar-btn {
     background: rgba(0, 0, 0, 0.4);
-    height: 200px;
-    padding-left: 0;
-    outline: none;
     border: none;
+    height: 200px;
+    outline: none;
+    padding-left: 0;
 }

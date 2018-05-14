@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace GameWeb.Data.Migrations
 {
@@ -10,26 +9,25 @@ namespace GameWeb.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "GalleryScreenshots",
-                columns: table => new
+                "GalleryScreenshots",
+                table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy",
+                            SqlServerValueGenerationStrategy.IdentityColumn),
                     Created = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_GalleryScreenshots", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_GalleryScreenshots", x => x.Id); });
 
             migrationBuilder.CreateTable(
-                name: "ScreenshotsTags",
-                columns: table => new
+                "ScreenshotsTags",
+                table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy",
+                            SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     GalleryScreenshotId = table.Column<int>(nullable: true)
                 },
@@ -37,26 +35,26 @@ namespace GameWeb.Data.Migrations
                 {
                     table.PrimaryKey("PK_ScreenshotsTags", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ScreenshotsTags_GalleryScreenshots_GalleryScreenshotId",
-                        column: x => x.GalleryScreenshotId,
-                        principalTable: "GalleryScreenshots",
-                        principalColumn: "Id",
+                        "FK_ScreenshotsTags_GalleryScreenshots_GalleryScreenshotId",
+                        x => x.GalleryScreenshotId,
+                        "GalleryScreenshots",
+                        "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ScreenshotsTags_GalleryScreenshotId",
-                table: "ScreenshotsTags",
-                column: "GalleryScreenshotId");
+                "IX_ScreenshotsTags_GalleryScreenshotId",
+                "ScreenshotsTags",
+                "GalleryScreenshotId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ScreenshotsTags");
+                "ScreenshotsTags");
 
             migrationBuilder.DropTable(
-                name: "GalleryScreenshots");
+                "GalleryScreenshots");
         }
     }
 }

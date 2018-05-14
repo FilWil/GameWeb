@@ -16,10 +16,10 @@
     -webkit-animation: top_down 12.5s linear infinite 0s;
     animation: top_down 12.5s linear infinite 0s;
     color: #EA3D4E;
+    height: 75px;
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    height: 75px;
 }
 
 .introductionRotation span:nth-child(2) {

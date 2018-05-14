@@ -1,14 +1,14 @@
 ﻿using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using GameWeb.Data;
 using GameWeb.Interfaces;
 using GameWeb.Models;
 using GameWeb.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GameWeb
 {
@@ -33,10 +33,10 @@ namespace GameWeb
 
             //Google+ authentication
             services.AddAuthentication().AddGoogle(googleOptions =>
-                {
-                    googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-                    googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-                });
+            {
+                googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            });
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -87,13 +87,12 @@ namespace GameWeb
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
-                    name: "ScreenshotGallery",
-                    template: "{controller=ScreenshotGallery}/{action=Index}/{id}");
+                    "ScreenshotGallery",
+                    "{controller=ScreenshotGallery}/{action=Index}/{id}");
             });
         }
     }
-
 }

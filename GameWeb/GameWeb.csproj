@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-GameWeb-07D3D974-BF9E-484B-BDA7-7383F575CF0A</UserSecretsId>
     <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
 

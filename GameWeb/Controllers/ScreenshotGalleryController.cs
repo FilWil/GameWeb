@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Gallery;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,7 +36,7 @@ namespace GameWeb.Controllers
             {
                 Screenshots = screenshotList,
                 GameId = id,
-                SearchQuery = String.Empty
+                SearchQuery = string.Empty
             };
             return View(model);
         }

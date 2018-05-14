@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using GameWeb;
 using GameWeb.Data;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Game;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -15,7 +12,7 @@ namespace GameWeb.Services
 {
     public class GameService : IGames
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public GameService(ApplicationDbContext context)
         {
@@ -42,46 +39,36 @@ namespace GameWeb.Services
         public string GetTitle(int id)
         {
             if (_context.Games.Any(game => game.Id == id))
-            {
                 return _context.Games.FirstOrDefault(game => game.Id == id)?.Title;
-            }
-            else return "";
+            return "";
         }
 
         public string GetGenre(int id)
         {
             if (_context.Games.Any(game => game.Id == id))
-            {
                 return _context.Games.FirstOrDefault(game => game.Id == id)?.Genre;
-            }
-            else return "";
+            return "";
         }
 
         public string GetPlatform(int id)
         {
             if (_context.Games.Any(game => game.Id == id))
-            {
                 return _context.Games.FirstOrDefault(game => game.Id == id)?.Platform;
-            }
-            else return "";
+            return "";
         }
 
         public int GetRating(int id)
         {
             if (_context.Games.Any(game => game.Id == id))
-            {
                 return _context.Games.FirstOrDefault(game => game.Id == id).Rating;
-            }
-            else return -1;
+            return -1;
         }
 
         public int ReleaseYear(int id)
         {
             if (_context.Games.Any(game => game.Id == id))
-            {
                 return _context.Games.FirstOrDefault(game => game.Id == id).Rating;
-            }
-            else return -1;
+            return -1;
         }
 
         public CloudBlobContainer GetBlobContainer(string connectionString, string containerName)

@@ -1,35 +1,36 @@
-﻿@using GameWeb.Models.Game
-@model GameWeb.Models.Game.AddGame
-
+﻿@model GameWeb.Models.Game.AddGame
+@{
+    ViewData["Title"] = "Add game";
+}
 <div class="container body-content" style="font-family: 'Roboto', sans-serif;">
     <div class="row upload-container">
         <div class="upload-form drop-shadow">
             <form asp-action="AddNewGame" method="post" enctype="multipart/form-data" id="upload-form" style="color: white;">
                 <div class="form-group">
                     <label asp-for="Title"></label>
-                    <input asp-for="Title" class="form-control" />
+                    <input asp-for="Title" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label asp-for="Genre"></label>
-                    <input asp-for="Genre" class="form-control" />
+                    <input asp-for="Genre" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label asp-for="Platform"></label>
-                    <input asp-for="Platform" class="form-control" />
+                    <input asp-for="Platform" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label asp-for="ReleaseYear">Release Year</label><br/>
-                    <select asp-for="ReleaseYear"  style="color: black;">
+                    <select asp-for="ReleaseYear" style="color: black;">
                         @for (var i = DateTime.Now.Year; i > 1972; i--)
-                         {
+                        {
                             <option value="@i">@i</option>
-                         }
+                        }
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="btn btn-default btn-file">
                         Browse for game cover
-                        <input type="file" name="file" style="display: none;" />
+                        <input type="file" name="file" style="display: none;"/>
                     </label>
                 </div>
                 <div class="submit">

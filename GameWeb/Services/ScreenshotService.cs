@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using GameWeb.Data;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Gallery;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.WindowsAzure.Storage;
@@ -15,7 +13,7 @@ namespace GameWeb.Services
 {
     public class ScreenshotService : IScreenshot
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public ScreenshotService(ApplicationDbContext context)
         {
@@ -69,7 +67,7 @@ namespace GameWeb.Services
         public List<ScreenshotTag> ParseTags(string tags)
         {
             return tags.Split(",")
-                .Select(tag => new ScreenshotTag { Description = tag })
+                .Select(tag => new ScreenshotTag {Description = tag})
                 .ToList();
         }
     }

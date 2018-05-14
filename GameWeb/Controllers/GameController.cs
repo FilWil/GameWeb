@@ -1,7 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Game;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,13 +12,15 @@ namespace GameWeb.Controllers
     {
         private readonly IConfiguration _config;
         private readonly IGames _gamesService;
-        private string AzureConnectionString { get; }
+
         public GameController(IConfiguration config, IGames gamesService)
         {
             _config = config;
             _gamesService = gamesService;
             AzureConnectionString = _config["AzureStorageConnectionString"];
         }
+
+        private string AzureConnectionString { get; }
 
         public IActionResult AddGame()
         {
@@ -28,7 +29,8 @@ namespace GameWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddNewGame(IFormFile file, string title, string genre, string platform, int releaseYear)
+        public async Task<IActionResult> AddNewGame(IFormFile file, string title, string genre, string platform,
+            int releaseYear)
         {
             var container = _gamesService.GetBlobContainer(AzureConnectionString, "games");
 

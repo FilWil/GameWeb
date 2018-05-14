@@ -1,7 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using GameWeb.Interfaces;
-using GameWeb.Models;
 using GameWeb.Models.Gallery;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

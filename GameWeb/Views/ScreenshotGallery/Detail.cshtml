@@ -1,5 +1,7 @@
-﻿@using GameWeb.Models.Gallery
-@model GameWeb.Models.Gallery.GalleryDetailModel
+﻿@model GameWeb.Models.Gallery.GalleryDetailModel
+@{
+    ViewData["Title"] = Model.Title;
+}
 <div class="container body-content" id="screenshot-body-content">
     <div class="row screenshot-detail-container">
         <div class="screenshot-detail">
@@ -7,7 +9,9 @@
         </div>
     </div>
     <div class="row screenshot-detail-meta" style="color: white; font-family: 'Roboto', sans-serif;">
-        <span><b>Title: </b>@Model.Title</span><br/>
-        <span><b>Posted: </b>@Model.Created.ToLocalTime()</span>
+        <span>
+            <b>Title: </b>@Model.Title</span><br/>
+        <span>
+            <b>Posted: </b>@Model.Created</span>
     </div>
 </div>

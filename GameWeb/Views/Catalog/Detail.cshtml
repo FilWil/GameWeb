@@ -1,6 +1,7 @@
-﻿@using GameWeb.Models.Game
-@model GameWeb.Models.Game.GameDetail
-
+﻿@model GameWeb.Models.Game.GameDetail
+@{
+    ViewData["Title"] = Model.Title;
+}
 <div class="container">
     <div class="page-header clearfix detailHeading">
         <h2 class="text-muted" style="color: white; font-family: 'Roboto', sans-serif;">Description</h2>
@@ -11,24 +12,28 @@
 
         <div class="col-md-4">
             <div>
-                <img class="detailImage" src="@Model.ImageUrl" />
+                <img class="detailImage" src="@Model.ImageUrl"/>
                 <table style="margin-top: 20px;">
                     <tr>
-                        <td class="itemLabel"><b>Genre: </b></td>
+                        <td class="itemLabel">
+                            <b>Genre: </b>
+                        </td>
                         <td class="itemValue">@Model.Genre</td>
                     </tr>
                     <tr>
-                        <td class="itemLabel"><b>Platform:</b> </td>
+                        <td class="itemLabel">
+                            <b>Platform:</b>
+                        </td>
                         <td class="itemValue">@Model.Platform</td>
                     </tr>
                     <tr>
                         <td class="itemLabel"><b>Release</b>: </td>
                         <td class="itemValue">@Model.ReleaseYear</td>
                     </tr>
-                    <tr>
-                        <td class="itemLabel"><b>Rating:</b> </td>
-                        <td class="itemValue">@Model.Rating</td>
-                    </tr>
+                    @*<tr>
+                            <td class="itemLabel"><b>Rating:</b> </td>
+                            <td class="itemValue">@Model.Rating</td>
+                        </tr>*@
                 </table>
 
             </div>
@@ -38,17 +43,18 @@
             <div>
                 <p id="itemTitle">@Model.Title (@Model.ReleaseYear)</p>
                 <p id="itemDescription" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi nibh, dapibus facilisis finibus vel, venenatis vel ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div>
-                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="RedirectGameIdToGallery" asp-route-id="@Model.GameId" style="color: white">Show Gallery</a></p>
-                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId" style="color: white">Watch Trailer</a></p>
+                    <p>
+                        <a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="RedirectGameIdToGallery" asp-route-id="@Model.GameId" style="color: white">Show Gallery</a>
+                    </p>
+                    @*<p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="PlayTrailer" asp-route-id="@Model.GameId" style="color: white">Watch Trailer</a></p>*@
                 </div>
             </div>
         </div>
     </div>
 </div>
-
