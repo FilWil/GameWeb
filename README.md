@@ -10,6 +10,7 @@
 * Add new games to the list and upload screenshots (everything is synchronized with database / blob container)
 * Search for specific games using searchbar
 * Access to REST API with CRUD functions
+* Register / login (users are stored in a database)
 
 
 # Home page
